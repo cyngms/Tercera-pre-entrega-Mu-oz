@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Lista de Entradas del Blog</h2>
+
+  <!-- Formulario de búsqueda -->
+  <form method="get">
+    <input type="text" name="query" placeholder="Buscar">
+    <button type="submit">Buscar</button>
+  </form>
+
+  <ul>
+    {% for post in object_list %}
+      <li><a href="{% url 'blog:post_detail' pk=post.pk %}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

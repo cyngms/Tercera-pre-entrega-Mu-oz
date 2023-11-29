@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Comentarios para la Entrada "{{ object.title }}"</h2>
+  <ul>
+    {% for comment in comments %}
+      <li>{{ comment.text }} - {{ comment.author }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

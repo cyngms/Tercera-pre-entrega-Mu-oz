@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Python{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1><a href="{% url 'blog:post_list' %}">Python</a></h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'blog:post_list' %}">Inicio</a></li>
+                <li><a href="{% url 'blog:author_list' %}">Autores</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; {{ 2023 }} Python. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
